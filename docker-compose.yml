@@ -1,0 +1,22 @@
+version: '3'
+
+# Definição do serviços que serão orquestrados
+services:
+  # Nome do serviço
+  app:
+    # Onde que está localizado o arquivo Dockerfile para construir a imagem desse serviço
+    build: .
+    
+    # Quais portas devem ser expostas, notação é: porta_no_host:porta_no_container
+    ports:
+      - 3000:3000
+      
+    # Volumes a serem mapeados, para qualquer alteração feita nos arquivos fora do container 
+    # possa ser mapeado para dentro do container
+    volumes:
+      # Da pasta local (.) para a pasta /usr/src/app dentro do container
+      - .:/usr/src/app
+      - /path/to/node_modules
+  # Referências: https://docs.docker.com/compose/compose-file/
+  # Para executar rode:
+  # (sudo) docker-compose up 

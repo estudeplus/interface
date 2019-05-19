@@ -14,5 +14,3 @@ ADD public /usr/src/app/public
 RUN npm build
 
 CMD [ "npm", "start" ]
-
-#a08231a011fa
