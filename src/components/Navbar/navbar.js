@@ -7,7 +7,9 @@ class Navbar extends Component {
       <div>
          <nav>
             <div class="nav-wrapper nav">
-            <a href="/menu" class="brand-logo">Estude+</a>
+            <a href="/menu" class="brand-logo">
+                <img width="255" height="60" src={require('../../img/logo01pequena.png')}></img>
+            </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/">Pré-cadastro</a></li>
