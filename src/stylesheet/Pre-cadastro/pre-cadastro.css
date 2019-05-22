@@ -1,14 +1,3 @@
-.nav{
-    position: absolute;
-    width: 100%;
-    height: 76px;
-    left: 0px;
-    top: 0px;
-    
-    background: #2e6fc9;
-    box-sizing: border-box; 
-}
-
 .texto{
     text-align: center;
     font-family:sans-serif;

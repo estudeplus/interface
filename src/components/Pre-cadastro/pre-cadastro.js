@@ -5,11 +5,6 @@ class Precadastro extends Component {
   render() {
     return (
     <div>
-      <div className="nav">
-        {/* <img src={require('../../img/Estude+ sem fundo.png')} alt="logo"></img> */}
-      </div>
-      
-
       <div class="card box1">
           <br></br>
           <h2 className="texto">Pré-cadastro</h2>
@@ -38,6 +33,7 @@ class Precadastro extends Component {
           </ul>
         </div>
       </div>
+
     </div>  
     )
   }
