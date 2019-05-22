@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Precadastro from './components/Pre-cadastro/pre-cadastro';
+import Cadastro from './components/Pre-cadastro/cadastro';
 import 'materialize-css/dist/css/materialize.min.css'
 
 function App() {

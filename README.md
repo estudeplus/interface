@@ -1,8 +1,8 @@
-#Docker
- ## Para utilizar o docker para a aplicação
+ # Docker
+ ## Para utilizar o docker na aplicação
     
-    $ sudo docker image build -t interface
-    $ sudo docker image build -t interface .
-    $ sudo docker run -it interface bash
-    $ sudo docker image build -t interface
-    $ sudo docker image build -t interface .
+    $ sudo docker-compose up    
+
+ ## Interface
+
+    Implementação da interface do "Estude +"
