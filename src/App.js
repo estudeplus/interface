@@ -7,6 +7,7 @@ import Navbarperfil from  './components/Navbar-Perfil/navbar-perfil';
 import 'materialize-css/dist/css/materialize.min.css'
 import {BrowserRouter as Router} from 'react-router-dom'
 import Route from 'react-router-dom/Route';
+import Perfil from './components/Perfil/Perfil';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             return (
             <div>
               <Navbarperfil/>
+              <Perfil/>
             </div>
             )
             }

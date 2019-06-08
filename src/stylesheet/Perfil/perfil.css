@@ -1,0 +1,11 @@
+.sidebar{
+    position: absolute;
+    width: 264px;
+    height: 826px;
+    left: 0px;
+    top: 74px;
+
+    background: rgba(0, 32, 200, 0.35);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
