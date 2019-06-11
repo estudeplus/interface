@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: interface-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80 
+      targetPort: 3000 
+  selector:
+    app: interface
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: interface-deploy 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: interface 
+    spec:
+      containers:
+      - image: estudeplus/interface
+        imagePullPolicy: Always
+        livenessProbe:
+          failureThreshold: 5
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+        name: interface-container
+        ports:
+          - containerPort: 3000

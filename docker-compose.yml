@@ -16,7 +16,7 @@ services:
     volumes:
       # Da pasta local (.) para a pasta /usr/src/app dentro do container
       - .:/usr/src/app
-      - /usr/src/app/to/node_modules
+      - /usr/src/app/node_modules
   # Referências: https://docs.docker.com/compose/compose-file/
   # Para executar rode:
   # (sudo) docker-compose up 
