@@ -1,0 +1,33 @@
+sudo: required
+services:
+- docker
+cache:
+  directories:
+  - "$HOME/google-cloud-sdk/"
+env:
+  global:
+  - GOOGLE_APPLICATION_CREDENTIALS=$TRAVIS_BUILD_DIR/deploy/gcloud-key.json
+  - ORG_NAME=estudeplus
+  - IMAGE_NAME=interface
+  - DEPLOYMENT=interface-deploy
+  - CONTAINER=interface-container
+  - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  - secure: fT7UXGY7ouBYlQismnu97CRzZt775MuARvSaUn90iHoaK5G65EFLdU4dPz4x6mthCoaPGIT0tTbfLpbV+3YIBbiTqe+Ice0JCL4RditqqCKv867+T4d6HETvz+R/0qLKQ9vGAgziwqh/GynojNRM4p38INEnixBBGYSYgD2rVot397dxF9tgctof5w7b2y0EoJKhyYyyUNAz6KuJjp7LOAJz3StGtycHiTMXsiZk+uaFhnkU+JN8Pzk1fYbeN0s5mhk6CJfTchk6ytAjKt1BQAn65sA92KUq2CTx+rzngnTK7oYXUV2B3YTVDXgbLoSAPD5gPyM3OKF4+uxGEsomrlB50MflXp0dyC1WhlbLdki7I88yY/cGg4BD+Ay/eBfVtWYt1wNOhFkp9sEwuN2EAk28PXv8bk+ATM0qNSXhV2FleN5K1Q50eyRRM94BgavGXFYAwuBI8iS/JNPdSJzf1w+iARNZLv0oZskmVxuLE/T7zj9a+XIXfPKS8j5fInY9RNoZ+194lAoSfDTD8deaUiXfITcj4l7ChaG9KDSVnKm1aVZpCDVFrs7Dh6UpP43jNVKyVqNh5pFoOAR62AkJGSDZhoyj1LCY0JTRkjZJ2gOuhwuOrjNGbdKg/nKHD60n0CgU/8RTOuy7rckUVdjvQRiGX1Ms4zB7BmfXkha0Yfs=
+script:
+- docker build -t ${ORG_NAME}/${IMAGE_NAME}:$TRAVIS_COMMIT .
+before_deploy:
+- if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; curl
+  https://sdk.cloud.google.com | bash > /dev/null; fi
+- source $HOME/google-cloud-sdk/path.bash.inc
+- gcloud --quiet components update kubectl
+deploy:
+- provider: script
+  script: chmod +x deploy/deploy.sh && bash deploy/deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master 
+notifications:
+  email: false
+before_install:
+- openssl aes-256-cbc -K $encrypted_616071dd0d17_key -iv $encrypted_616071dd0d17_iv
+  -in $TRAVIS_BUILD_DIR/deploy/gcloud-key.json.enc -out $TRAVIS_BUILD_DIR/deploy/gcloud-key.json -d
