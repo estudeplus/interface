@@ -1,11 +1,23 @@
 .sidebar{
-    position: absolute;
-    width: 264px;
-    height: 826px;
-    left: 0px;
-    top: 74px;
+    position: relative;
+    height: 100%;
 
     background: rgba(0, 32, 200, 0.35);
-    border: 1px solid #000000;
+    /* border: 1px solid #000000; */
     box-sizing: border-box;
+    
+    padding-bottom: 47.8%;
+    overflow: hidden;
+
+    
+    width: 200px;
+    -ms-flex: 0 100px;
+    -webkit-box-flex:  0;
+    -moz-box-flex:  0;
+    -ms-box-flex:  0;
+    box-flex:  0; 
+}
+
+.fotoperfil{
+
 }
