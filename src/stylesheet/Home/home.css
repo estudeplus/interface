@@ -27,3 +27,11 @@
     align-items: center;
     text-align: center;
 }
+
+.imgredondo {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    color: #FFF;
+    border-radius: 50%;
+ }
