@@ -4,7 +4,7 @@ import '../../stylesheet/Navbar/navbar.css'
 class Navbar extends Component {
     render() {
       return (
-      <div>
+      <div class="navbar-fixed">
          <nav>
             <div class="nav-wrapper nav">
             <a href="/menu" class="brand-logo">
@@ -15,7 +15,7 @@ class Navbar extends Component {
                 <li><a href="/">Pré-cadastro</a></li>
                 <li><a href="/cadastro">Cadastro</a></li>
                 <li><a href="/cadastro">Login</a></li>
-                <li><a href="/manu">Menu</a></li>
+
             </ul>
             </div>
         </nav>

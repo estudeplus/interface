@@ -1,0 +1,29 @@
+
+.bloco{
+    height: 100%;
+}
+.bloco2{
+    background-color: #f0f0f0;
+    height: 100%;
+}
+.logomeio{
+    align-content: center;
+}
+
+#centro1 {
+    width: 100vw;
+    height: 80vh;
+    margin-top:5%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#centro2 {
+    width: 100vw;
+    height: 110vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

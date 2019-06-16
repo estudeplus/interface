@@ -8,6 +8,7 @@ import 'materialize-css/dist/css/materialize.min.css'
 import {BrowserRouter as Router} from 'react-router-dom'
 import Route from 'react-router-dom/Route';
 import Perfil from './components/Perfil/Perfil';
+import Home from './components/Home/Home';
 
 function App() {
   return (
@@ -40,6 +41,16 @@ function App() {
             <div>
               <Navbarperfil/>
               <Perfil/>
+            </div>
+            )
+            }
+          }/>
+          <Route path="/menu" exact strict render={
+            ()=>{
+            return (
+            <div>
+              <Navbar/>
+              <Home/>
             </div>
             )
             }
