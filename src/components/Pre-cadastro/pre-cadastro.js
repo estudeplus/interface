@@ -22,11 +22,7 @@ class Precadastro extends Component {
         <div class="card-tabs">
           <ul class="tabs tabs-fixed-width">
             <li class="tab">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
-              </button>
-            </li>
-            <li class="tab">
-              <button class="btn waves-effect waves-light" type="submit" name="action">Login
+              <button class="btn waves-effect waves-light" type="submit" name="action">Cadastro
                 <i class="material-icons right">send</i>
               </button>  
             </li>
