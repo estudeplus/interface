@@ -12,9 +12,9 @@ class Navbar extends Component {
             </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="/">Pré-cadastro</a></li>
+                <li><a href="/precadastro">Pré-cadastro</a></li>
                 <li><a href="/cadastro">Cadastro</a></li>
-                <li><a href="/cadastro">Login</a></li>
+                <li><a href="/login">Login</a></li>
 
             </ul>
             </div>

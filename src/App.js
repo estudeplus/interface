@@ -9,13 +9,14 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import Route from 'react-router-dom/Route';
 import Perfil from './components/Perfil/Perfil';
 import Home from './components/Home/Home';
+import Login from './components/Login/login'
 
 function App() {
   return (
     <Router>
         <div class = "App-link">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
-          <Route path="/" exact strict render={
+          <Route path="/precadastro" exact strict render={
             ()=>{
               return (
               <div> 
@@ -51,6 +52,16 @@ function App() {
             <div>
               <Navbar/>
               <Home/>
+            </div>
+            )
+            }
+          }/>
+          <Route path="/login" exact strict render={
+            ()=>{
+            return (
+            <div>
+              <Navbar/>
+              <Login/>
             </div>
             )
             }
