@@ -1,0 +1,59 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add axios
+
+PATH: 
+  /home/eric/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eric/Downloads/android/tools:/home/eric/Downloads/android/platform-tools:/home/eric/Downloads/android/tools:/home/eric/Downloads/android/platform-tools
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.15.2
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/home/eric/UnB/Desenho/interface/node_modules/@babel/core/node_modules/ms'
+
+npm manifest: 
+  {
+    "name": "interface",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "axios": "^0.19.0",
+      "materialize-css": "^1.0.0",
+      "react": "^16.8.6",
+      "react-dom": "^16.8.6",
+      "react-router-dom": "^5.0.0",
+      "react-scripts": "3.0.1"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

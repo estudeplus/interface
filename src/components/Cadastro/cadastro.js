@@ -40,15 +40,6 @@ class Cadastro extends Component {
                 </button>  
               </li>
             </div>
-            <div className="text-center">
-                Não fez o pré cadastro ainda ?{' '}
-                <a
-                  href="/precadastro"
-                  className="text-info ml-1"
-                >
-                  <b>Faça o pré-cadastro aqui!</b>
-                </a>
-              </div>
           </div>
         </div>
       </div>

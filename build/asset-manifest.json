@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c786bd58.chunk.css",
+    "main.js": "/static/js/main.b0b135b1.chunk.js",
+    "main.js.map": "/static/js/main.b0b135b1.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.ae9e8b99.chunk.css": "/static/css/2.ae9e8b99.chunk.css",
+    "static/js/2.797f836c.chunk.js": "/static/js/2.797f836c.chunk.js",
+    "static/js/2.797f836c.chunk.js.map": "/static/js/2.797f836c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.554a8dd4f4f0592e3702885867812e0a.js": "/precache-manifest.554a8dd4f4f0592e3702885867812e0a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.ae9e8b99.chunk.css.map": "/static/css/2.ae9e8b99.chunk.css.map",
+    "static/css/main.c786bd58.chunk.css.map": "/static/css/main.c786bd58.chunk.css.map",
+    "static/media/logo01.png": "/static/media/logo01.e69d6403.png",
+    "static/media/logo01pequena.png": "/static/media/logo01pequena.486e8254.png",
+    "static/media/unb.svg": "/static/media/unb.52ab6383.svg"
+  }
+}

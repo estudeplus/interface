@@ -46,7 +46,7 @@ function App() {
             )
             }
           }/>
-          <Route path="/menu" exact strict render={
+          <Route path="/" exact strict render={
             ()=>{
             return (
             <div>
