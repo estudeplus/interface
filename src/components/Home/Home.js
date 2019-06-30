@@ -11,7 +11,7 @@ export default class Home extends Component {
         return (
             <div>
                 <div class="bloco" id="centro1">
-                    <img className="logomeio"width="1020" height="240" src={require('../../img/logo01.png')} ></img>
+                    <img className="logomeio"width="1020" height="240" src={require('../../img/logo01.png')} alt="logo" ></img>
                     <h3> O que é o Estude+?</h3>
                     <br></br>
                     <h5>O Estude+ é uma ferramenta online que busca ajudar na relação entre monitores e alunos.</h5>
@@ -21,7 +21,7 @@ export default class Home extends Component {
                 <div class="bloco2" id="centro2">
                     <br></br>
                     <br></br>
-                    <img className="logomeio" width="600" height="300" src={require('../../img/unb.svg')} ></img>
+                    <img className="logomeio" width="600" height="300" src={require('../../img/unb.svg')} alt="unb"></img>
                     <h3> A Universidade de Brasília</h3>
                     <br></br>
                     <h5>Uma Universidade transformadora, com a missão de produzir, integrar e divulgar conhecimento,</h5>
