@@ -43,14 +43,14 @@ class Login extends Component {
         console.log(resp)
         for(var i = 0; i < resp.data.length; i++){
           if((login.email === resp.data[i].email) && (login.password === resp.data[i].password)){
-            return window.location="/perfil";
+            console.log(resp)
+            // return window.location="/perfil";
           }else{
             alert("Usuário ou senha Incorretos!")
           }
           
         }
       })
-      // window.location = "/perfil";
     }
     render() {
       return (
