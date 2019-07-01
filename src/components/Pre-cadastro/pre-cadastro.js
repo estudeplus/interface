@@ -23,7 +23,7 @@ class Precadastro extends Component {
   }
   postmethod() {
 		let resp = {
-			student_id:this.state.matricula
+			"student_id":this.state.matricula
 		}
 		let data = JSON.stringify(resp)
 		axios({
