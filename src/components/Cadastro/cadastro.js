@@ -48,6 +48,7 @@ class Cadastro extends Component {
           alert("É necessário que as duas senhas sejam iguais")
         }else{
           this.postmethod()
+          window.location='/perfil'
         }
 
       }
@@ -71,6 +72,10 @@ class Cadastro extends Component {
       }).then(resp => {
         console.log(resp)
       })
+    }
+    handleClick(){
+      this.postmethod()
+      window.location="/login"
     }
 
     render() {
@@ -124,7 +129,7 @@ class Cadastro extends Component {
           <div class="card-tabs">
             <div class="tabs tabs-fixed-width">
               <li class="tab">
-                <button class=" text-center btn waves-effect waves-light" type="submit" name="action">Login
+                <button class=" text-center btn waves-effect waves-light" type="submit" name="action" onClick={() => this.handleClick()}>Login
                   <i class="material-icons right">send</i>
                 </button>  
               </li>

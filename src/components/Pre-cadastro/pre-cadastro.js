@@ -7,7 +7,6 @@ import axios from 'axios';
 
 class Precadastro extends Component {
 
-
   state ={
     matricula:''
   }  
@@ -37,7 +36,10 @@ class Precadastro extends Component {
 		}).then(resp => {
 			console.log(resp)
 		})
-	}
+  }
+  handleClick(){
+    window.location = "/cadastro";
+  }
 
   render() {
     return (
@@ -60,9 +62,15 @@ class Precadastro extends Component {
                   </div>
                 </div>     
             </div>
-            <a class="waves-effect waves-light btn">Cadastro
-              <i class="material-icons right">send</i>
-            </a> 
+            <div class="card-tabs">
+              <div class="tabs tabs-fixed-width">
+                <li class="tab">
+                  <button class=" text-center btn waves-effect waves-light" type="submit" name="action" onClick={() => this.handleClick()}>Login
+                    <i class="material-icons right">send</i>
+                  </button>  
+                </li>
+              </div>
+            </div>  
       </div>
     </div>  
     )

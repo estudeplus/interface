@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../stylesheet/Cadastro/cadastro.css'
-// import axios from 'axios';
+import axios from 'axios';
+import qs from 'qs';
 
 class Login extends Component {
     state = {
@@ -18,13 +19,38 @@ class Login extends Component {
       })
     }
     handleKeyDown = event => {
-      if (event.key === 'Enter') {
-        if(this.state.Email =='ericobandeira@hotmail.com' && this.state.Senha == "123456"){
-          return (window.location = '/perfil')
-        }else{
-          alert('Usuário ou Senha inválido')
-        }
+      if (event.key === 'Enter') 
+          return this.handleClick()
+
+    }
+    handleClick(){
+      let login = {
+        student_id: '',
+        name:'',
+        email: this.state.Email,
+        password: this.state.Senha
       }
+    
+  
+      axios({
+        method: 'GET',
+        baseURL:'http://34.67.167.51:3000/profile/register',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: qs.stringify(login)
+      }).then(resp => {
+        console.log(resp)
+        for(var i = 0; i < resp.data.length; i++){
+          if((login.email === resp.data[i].email) && (login.password === resp.data[i].password)){
+            return window.location="/perfil";
+          }else{
+            alert("Usuário ou senha Incorretos!")
+          }
+          
+        }
+      })
+      // window.location = "/perfil";
     }
     render() {
       return (
@@ -57,11 +83,7 @@ class Login extends Component {
           <div class="card-tabs">
             <ul class="tabs tabs-fixed-width">
               <li class="tab">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Cadastre-se
-                </button>
-              </li>
-              <li class="tab">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Login 
+                <button class="btn waves-effect waves-light" type="submit" name="action" onClick={() => this.handleClick()}>Login 
                   <i class="material-icons right">send</i>
                 </button>  
               </li>

@@ -66,6 +66,16 @@ function App() {
             )
             }
           }/>
+          <Route path="/monitoria" exact strict render={
+            ()=>{
+            return (
+            <div>
+              <Navbar/>
+              <Login/>
+            </div>
+            )
+            }
+          }/>
         </div> 
       </Router>
   );
