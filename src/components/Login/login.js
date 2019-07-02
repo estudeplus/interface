@@ -41,11 +41,15 @@ class Login extends Component {
         data: qs.stringify(login)
       }).then(resp => {
         console.log(resp)
+        var bool=0;
         for(var i = 0; i < resp.data.length; i++){
           if((login.email === resp.data[i].email) && (login.password === resp.data[i].password)){
             console.log(resp)
             return window.location="/monitoria";
           }else{
+            bool++;
+          }
+          if(bool===(resp.data.length)){
             alert("Usuário ou senha Incorretos!")
           }
           

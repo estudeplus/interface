@@ -18,29 +18,31 @@ class Precadastro extends Component {
   handleKeyDown = event => {
     if (event.key === 'Enter') {
       this.postmethod()
+      
     }
   }
   postmethod() {
-		let resp = {
-			"student_id":this.state.matricula
-		}
-		let data = JSON.stringify(resp)
-		axios({
-			method: 'POST',
-			baseURL:
-				'http://34.67.167.51:3000/profile/pre-register/',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			data: data
-		}).then(resp => {
-			console.log(resp)
-		})
+    let resp = {
+      "student_id":this.state.matricula
+    }
+    let data = JSON.stringify(resp)
+    axios({
+      method: 'POST',
+      baseURL:
+        'http://34.67.167.51:3000/profile/pre-register/',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    }).then(resp =>{
+      console.log(resp)
+      window.location = "/cadastro";
+    })
   }
   handleClick(){
     this.postmethod()
-    window.location = "/cadastro";
   }
+
 
   render() {
     return (

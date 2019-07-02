@@ -59,6 +59,7 @@ export default class MonitoriaCard extends Component {
             disciplineName,
             monitorId
         })
+        console.log(this.props)
     }
 
     render() {
@@ -69,12 +70,10 @@ export default class MonitoriaCard extends Component {
                     <Card1 className="card">
                         <div class="col s6 m4">      
                             <div class="card-panel">
-                                <div class="card-title">Código da Disciplina: {this.state.disciplineId}</div>
-                                <div>Nome da Disciplina: {this.state.disciplineName}</div>
+                                <div class="card-title">{this.state.disciplineName}</div>
                                 <div>ID do Monitor: {this.state.monitorId}</div>
                                 <div>Sala: {this.state.place}</div>
-                                <div>Horário: {this.state.datetime}</div>
-                                    
+                                <div>Horário: {this.state.datetime}</div>   
                             </div>
                         </div>
                     </Card1>

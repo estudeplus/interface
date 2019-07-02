@@ -11,6 +11,7 @@ import Perfil from './components/Perfil/Perfil';
 import Home from './components/Home/Home';
 import Login from './components/Login/login'
 import Monitoria from './components/Monitoria/monitoria';
+import CadastroMonitoria from './components/Cadastro/cadastromonitoria'
 
 
 function App() {
@@ -78,6 +79,16 @@ function App() {
                 </div>
               </div>
             )
+            }
+          }/>
+           <Route path="/cadastromonitoria" exact strict render={
+            ()=>{
+            return (
+              <div>
+                <Navbarperfil/>
+                <CadastroMonitoria/>
+              </div> 
+              )
             }
           }/>
           
