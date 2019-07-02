@@ -48,7 +48,7 @@ class Cadastro extends Component {
           alert("É necessário que as duas senhas sejam iguais")
         }else{
           this.postmethod()
-          window.location='/perfil'
+          window.location = '/login'
         }
 
       }
@@ -74,8 +74,18 @@ class Cadastro extends Component {
       })
     }
     handleClick(){
-      this.postmethod()
-      window.location="/login"
+      if(this.state.nome===''){
+        alert("nome necessaria para cadastro")
+      }else if(this.state.email===''){
+        alert("email necessaria para cadastro")
+      }else if(this.state.senha===''){
+        alert("senha necessaria para cadastro")
+      }else if(this.state.senha != this.state.senha2){
+        alert("É necessário que as duas senhas sejam iguais")
+      }else{
+        this.postmethod()
+        window.location = '/login'
+      }
     }
 
     render() {

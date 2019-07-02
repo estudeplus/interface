@@ -6,7 +6,7 @@ export default class Perfil extends Component {
     return (
       <div className="">
         <ul class="right hide-on-med-and-down">
-
+          
         </ul>
       </div>
     )

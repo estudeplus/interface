@@ -10,6 +10,8 @@ import Route from 'react-router-dom/Route';
 import Perfil from './components/Perfil/Perfil';
 import Home from './components/Home/Home';
 import Login from './components/Login/login'
+import Monitoria from './components/Monitoria/monitoria';
+
 
 function App() {
   return (
@@ -69,13 +71,16 @@ function App() {
           <Route path="/monitoria" exact strict render={
             ()=>{
             return (
-            <div>
-              <Navbar/>
-              <Login/>
-            </div>
+              <div className="row">
+                <Navbarperfil/>
+                <div className="">
+                  <Monitoria/>
+                </div>
+              </div>
             )
             }
           }/>
+          
         </div> 
       </Router>
   );
