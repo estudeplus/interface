@@ -50,7 +50,6 @@ export default class MonitoriaCard extends Component {
         // const url = this.props.url;
         const {monitorId,place,datetime,studentsIds,disciplineClass,disciplineId,disciplineName} = this.props;
         const monitoriaIndex = monitorId;
-        console.log(disciplineId)
         this.setState({
             disciplineId,
             place,
@@ -68,30 +67,16 @@ export default class MonitoriaCard extends Component {
             <div className="col-md-3 col-sm-10 mb-5">
                 <StyledLink1 >
                     <Card1 className="card">
-                        {/* <h5 className="card-header">{this.state.monitoriaIndex}</h5>
-                            <Sprite1 className="card-img-top rounded mx-auto mt-2" 
-                            onLoad={()=> this.setState({imageLoading: false})}
-                            onError={()=>this.setState({toManyRequests: true})}
-                            style={
-                                this.state.toManyRequests ?{display:"none"}:
-                                this.state.imageLoading?null:{display:"block"}
-                            }/>
-
-                            <div className="card-body mx-auto"><h6 className="card-title">
-                            {this.state.name}
-                                </h6>
-                            </div> */}
-                                <div class="col s6 m4">
+                        <div class="col s6 m4">      
+                            <div class="card-panel">
+                                <div class="card-title">Código da Disciplina: {this.state.disciplineId}</div>
+                                <div>Nome da Disciplina: {this.state.disciplineName}</div>
+                                <div>ID do Monitor: {this.state.monitorId}</div>
+                                <div>Sala: {this.state.place}</div>
+                                <div>Horário: {this.state.datetime}</div>
                                     
-                                <div class="card-panel">
-                                    <div class="card-title">Código da Disciplina: {this.state.disciplineId}</div>
-                                    <div>Nome da Disciplina: {this.state.disciplineName}</div>
-                                    <div>ID do Monitor: {this.state.monitorId}</div>
-                                    <div>Sala: {this.state.place}</div>
-                                    <div>Horário: {this.state.datetime}</div>
-                                        
-                                    </div>
                             </div>
+                        </div>
                     </Card1>
                 </StyledLink1>
             </div>

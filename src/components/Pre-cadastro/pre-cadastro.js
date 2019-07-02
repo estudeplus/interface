@@ -26,9 +26,9 @@ class Precadastro extends Component {
 		}
 		let data = JSON.stringify(resp)
 		axios({
-			method: 'GET',
+			method: 'POST',
 			baseURL:
-				'http://34.67.167.51:3000/profile/pre-register',
+				'http://34.67.167.51:3000/profile/pre-register/',
 			headers: {
 				'Content-Type': 'application/json'
 			},
@@ -38,6 +38,7 @@ class Precadastro extends Component {
 		})
   }
   handleClick(){
+    this.postmethod()
     window.location = "/cadastro";
   }
 

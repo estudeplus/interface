@@ -12,7 +12,6 @@ export default class Monitoria extends Component {
     async componentDidMount(){
         const res = await axios.get(this.state.url);
         this.setState({monitoria: res.data});
-        console.log(res)
     }
 
     render() {

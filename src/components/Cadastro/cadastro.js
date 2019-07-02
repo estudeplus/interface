@@ -5,7 +5,7 @@ import axios from 'axios'
 class Cadastro extends Component {
 
     state ={
-      matricula:'',
+      matricula:'123',
       nome:'',
       email:'',
       senha:'',
@@ -62,9 +62,9 @@ class Cadastro extends Component {
     }
       let data = JSON.stringify(resp)
       axios({
-        method: 'GET',
+        method: 'POST',
         baseURL:
-          'http://34.67.167.51:3000/profile/register',
+          'http://34.67.167.51:3000/profile/register/',
         headers: {
           'Content-Type': 'application/json'
         },
