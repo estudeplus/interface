@@ -5,12 +5,28 @@ import axios from 'axios'
 class Cadastro extends Component {
 
     state ={
-      matricula:'123',
+      varmatricula:'',
+      matricula:'',
       nome:'',
       email:'',
       senha:'',
       senha2:''
     }  
+    componentDidMount(){
+      axios({
+        method: 'GET',
+        baseURL:
+          'http://34.67.167.51:3000/profile/register/',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resp => {
+        this.setState({
+          varmatricula: resp.data
+        })
+      })
+      
+    }
     handlechangeMatricula = event => {
       this.setState({
         matricula: event.target.value
@@ -36,9 +52,20 @@ class Cadastro extends Component {
         senha2: event.target.value
       })
     }
+
+
+    
     handleKeyDown = event => {
+      var bool=0;
       if (event.key === 'Enter') {
-        if(this.state.nome===''){
+        for(var i=0;i<this.state.varmatricula.length;i++){
+          if(this.state.matricula === this.state.varmatricula[i]){
+            bool=1;
+          }
+        }
+        if(this.state.matricula==='' || bool === '0'){
+          alert("matricula necessaria para cadastro")
+        }else if(this.state.nome===''){
           alert("nome necessaria para cadastro")
         }else if(this.state.email===''){
           alert("email necessaria para cadastro")
@@ -48,13 +75,18 @@ class Cadastro extends Component {
           alert("É necessário que as duas senhas sejam iguais")
         }else{
           this.postmethod()
-          window.location = '/login'
+          // window.location = '/login'
         }
 
       }
     }
+
+
+
+
     postmethod() {
       let resp = {
+        matricula:this.state.matricula,
         student_id: this.state.matricula,
         name: this.state.nome,
         email: this.state.email,
@@ -73,8 +105,20 @@ class Cadastro extends Component {
         console.log(resp)
       })
     }
+
+
+
+
     handleClick(){
-      if(this.state.nome===''){
+      var bool =0;
+      for(var i=0;i<this.state.varmatricula.length;i++){
+        if(this.state.matricula === this.state.varmatricula[i]){
+          bool=1;
+        }
+      }
+      if(this.state.matricula==='' && bool === '0'){
+        alert("matricula necessaria para cadastro")
+      }else if(this.state.nome===''){
         alert("nome necessaria para cadastro")
       }else if(this.state.email===''){
         alert("email necessaria para cadastro")
@@ -84,9 +128,12 @@ class Cadastro extends Component {
         alert("É necessário que as duas senhas sejam iguais")
       }else{
         this.postmethod()
-        window.location = '/login'
+        // window.location = '/login'
       }
     }
+
+
+
 
     render() {
       return (
@@ -97,6 +144,15 @@ class Cadastro extends Component {
             
             <div class="card-content">
                   <div class="row">
+              <div class="input-field col s12">
+                <input id="icon_prefix" type="text" class="validate"
+                onChange={this.handlechangeMatricula}
+                value={this.state.matricula}
+                onKeyDown={this.handleKeyDown}
+                required/>
+                <label for="icon_prefix"></label>
+                <label class="active" for="first_name2">Matricula</label>
+              </div>
               <div class="input-field col s12">
                 <input id="icon_prefix" type="text" class="validate"
                 onChange={this.handlechangeNome}

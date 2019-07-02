@@ -42,6 +42,7 @@ class Precadastro extends Component {
     window.location = "/cadastro";
   }
 
+
   render() {
     return (
     <div>
