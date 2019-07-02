@@ -36,30 +36,37 @@ const StyledLink1 = styled(Link)`
 
 export default class MonitoriaCard extends Component {
     state ={
-        name: "",
-        imageUrl: "",
-        monitoriaIndex:"",
-        imageLoading: true,
-        toManyRequests: false
+        monitorId:"",
+        place:"",
+        datetime:"",
+        studentsIds:"",
+        disciplineClass:"",
+        disciplineId:"",
+        disciplineName:""
     };
 
     componentDidMount(){
         // const name = this.props.name;
         // const url = this.props.url;
-        const {name, url} = this.props;
-        const monitoriaIndex = url.split("/")[url.split("/").length - 2];
-
-    this.setState({
-        name,
-        monitoriaIndex
-    })
+        const {monitorId,place,datetime,studentsIds,disciplineClass,disciplineId,disciplineName} = this.props;
+        const monitoriaIndex = monitorId;
+        console.log(disciplineId)
+        this.setState({
+            disciplineId,
+            place,
+            datetime,
+            studentsIds,
+            disciplineClass,
+            disciplineName,
+            monitorId
+        })
     }
 
     render() {
         
         return (
             <div className="col-md-3 col-sm-10 mb-5">
-                <StyledLink1 to={`montoria/${this.state.monitoriaIndex}`}>
+                <StyledLink1 >
                     <Card1 className="card">
                         {/* <h5 className="card-header">{this.state.monitoriaIndex}</h5>
                             <Sprite1 className="card-img-top rounded mx-auto mt-2" 
@@ -74,15 +81,15 @@ export default class MonitoriaCard extends Component {
                             {this.state.name}
                                 </h6>
                             </div> */}
-                                <div class="col s6 m6">
+                                <div class="col s6 m4">
                                     
-                                <div class="card-panel ">
-                                    <div class="card-title">{this.state.name}</div>
-                                        <span class="black-text">
-                                            I am a very simple card. I am good at containing small bits of information.
-                                            I am convenient because I require little markup to use effectively. 
-                                            I am similar to what is called a panel in other frameworks.
-                                        </span>
+                                <div class="card-panel">
+                                    <div class="card-title">Código da Disciplina: {this.state.disciplineId}</div>
+                                    <div>Nome da Disciplina: {this.state.disciplineName}</div>
+                                    <div>ID do Monitor: {this.state.monitorId}</div>
+                                    <div>Sala: {this.state.place}</div>
+                                    <div>Horário: {this.state.datetime}</div>
+                                        
                                     </div>
                             </div>
                     </Card1>
